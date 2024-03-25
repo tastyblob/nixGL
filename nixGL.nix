@@ -228,7 +228,10 @@ let
       # The nvidia version. Either fixed by the `nvidiaVersion` argument, or
       # auto-detected. Auto-detection is impure.
       nvidiaVersionAuto = if nvidiaVersion != null then
-        nvidiaVersion
+        if nvidiaVersion == "535.43.16" then
+          "535.54.03"
+        else
+          nvidiaVersion
       else
       # Get if from the nvidiaVersionFile
         let
